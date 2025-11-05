@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barbería Jesús Nogales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <div class="brand">
+        <img class="brand__logo" src="assets/logo.webp" alt="Barbería Jesús Nogales" onerror="this.style.display='none'"/>
+        <span class="brand__name">Barbería Jesús Nogales</span>
+      </div>
+      <nav class="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#reserva">Reserva</a>
+        <a href="#galeria">Galería</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" data-parallax style="background-image:url('assets/hero.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content fade-in">
+      <h1 class="title">Barbería Jesús Nogales</h1>
+      <p class="subtitle">Estilo tradicional, acabado moderno.</p>
+
+      <!-- Video de presentación -->
+      <div class="intro-video-wrap">
+        <video class="intro-video" autoplay muted playsinline loop preload="metadata" poster="assets/hero.jpg">
+          <source src="assets/intro.mp4" type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
+      </div>
+
+      <div class="cta">
+        <a class="btn btn--gold btn--full-m" href="#reserva">Reservar cita</a>
+        <a class="btn btn--ghost btn--full-m" target="_blank" rel="noreferrer" href="https://wa.me/34603702841">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 class="section__title">Servicios y Precios</h2>
+      <p class="section__lead">Calidad clásica con detalle moderno</p>
+      <div class="grid services">
+        <article class="card reveal"><h3>Corte</h3><div class="price">9€</div></article>
+        <article class="card reveal"><h3>Barba</h3><div class="price">6€</div></article>
+        <article class="card reveal"><h3>Corte + Barba</h3><div class="price">13€</div></article>
+        <article class="card reveal"><h3>Diseño</h3><div class="price">3€</div></article>
+        <article class="card reveal"><h3>Cejas</h3><div class="price">2€</div></article>
+        <article class="card reveal"><h3>Corte + Mechas</h3><div class="price">35€</div></article>
+        <article class="card reveal"><h3>Decoloración</h3><div class="price">50€</div></article>
+        <article class="card reveal"><h3>Colores Fantasía</h3><div class="price">35€</div></article>
+        <article class="card reveal"><h3>Diseño Color</h3><div class="price">25€</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Reserva justo debajo de Servicios -->
+  <section id="reserva" class="section section--tight">
+    <div class="container">
+      <h2 class="section__title">Reserva tu cita</h2>
+      <p class="section__lead">Selecciona fecha y hora disponibles</p>
+
+      <form id="bookForm" class="form" method="post" action="book.php" novalidate>
+        <label>Nombre *
+          <input type="text" name="nombre" required inputmode="text" autocomplete="name" placeholder="Tu nombre">
+        </label>
+
+        <label>Teléfono *
+          <input type="tel" name="telefono" required inputmode="tel" autocomplete="tel" pattern="^\+?[0-9\s-]{7,15}$" placeholder="603 70 28 41">
+        </label>
+
+        <label>Servicio *
+          <div class="select-wrap">
+            <select name="servicio" required>
+              <option value="" disabled selected>Elige un servicio…</option>
+              <option>Corte – 9€</option>
+              <option>Barba – 6€</option>
+              <option>Corte + Barba – 13€</option>
+              <option>Diseño – 3€</option>
+              <option>Cejas – 2€</option>
+              <option>Corte + Mechas – 35€</option>
+              <option>Decoloración – 50€</option>
+              <option>Colores Fantasía – 35€</option>
+              <option>Diseño Color – 25€</option>
+            </select>
+          </div>
+        </label>
+
+        <label>Fecha *
+          <div class="select-wrap">
+            <select id="fechaSelect" name="fecha" required>
+              <option value="">Cargando fechas…</option>
+            </select>
+          </div>
+        </label>
+
+        <label>Hora *
+          <div class="select-wrap">
+            <select id="horaSelect" name="hora" required disabled>
+              <option value="">Selecciona fecha primero…</option>
+            </select>
+          </div>
+        </label>
+
+        <button class="btn btn--gold btn--full-m" type="submit">Reservar</button>
+        <p id="formMsg" class="form__msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="form__hint">Tras reservar, también puedes <a class="link" id="waConfirm" target="_blank" rel="noreferrer">confirmar por WhatsApp</a>.</p>
+      <p class="form__hint">Gestión de horario: <a href="admin.php" class="link">Panel de administración</a></p>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2 class="section__title">Galería</h2>
+      <p class="section__lead">Nuestro espacio y trabajos</p>
+      <div class="grid gallery">
+        <button class="gallery__item reveal" data-lightbox-src="assets/hero.jpg" style="background-image:url('assets/hero.jpg');"></button>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" hidden aria-hidden="true">
+      <div class="lightbox__backdrop" data-close></div>
+      <img class="lightbox__img" alt="Vista ampliada" />
+      <button class="lightbox__close" data-close aria-label="Cerrar">×</button>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="sobre" class="section">
+    <div class="container about">
+      <div class="about__img reveal"><img src="assets/hero.jpg" alt="Barbero en acción"></div>
+      <div class="about__text reveal">
+        <h2 class="section__title">Sobre Nosotros</h2>
+        <p>En Barbería Jesús Nogales honramos la tradición con técnica impecable y un trato cercano. Nuestro espacio combina elegancia sobria con un servicio moderno y eficiente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section">
+    <div class="container contact">
+      <div class="contact__card reveal">
+        <h3>Contacto</h3>
+        <ul>
+          <li><strong>Dirección:</strong> Plaza Estados Unidos, 2, La Orden, Huelva</li>
+          <li><strong>Teléfono:</strong> <a href="tel:603702841">603 70 28 41</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/jesus_nogales_barber/" target="_blank">jesus_nogales_barber</a></li>
+          <li>
+            <a class="btn btn--gold btn--full-m" target="_blank" rel="noreferrer" href="https://wa.me/34603702841">WhatsApp</a>
+            <a class="btn btn--ghost btn--full-m" href="#reserva">Reservar</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact__map reveal">
+        <iframe title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d12703.026209393927!2d-6.9533696!3d37.25348315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xd11cf0038213915%3A0xf577435167afdbf3!2sPl.%20de%20Estados%20Unidos%2C%202%2C%2021005%20Huelva!3m2!1d37.2801422!2d-6.941960399999999!5e0!3m2!1ses!2ses!4v1762367539271!5m2!1ses!2ses"
+          width="100%" height="420" style="border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="year"></span> Barbería Jesús Nogales.</footer>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
