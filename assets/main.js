@@ -1,4 +1,4 @@
-const GAS_BASE = 'https://script.google.com/macros/s/AKfycbzA9M2LapWq5awv3vVx72AiZPpe_-TKxmJrM3lCEXcObMyuT1hqCMVQeuUCVRMEaMWmlw/exec?admin=1';
+const GAS_BASE = 'https://script.google.com/macros/s/AKfycbxY9LXTVt8mYrb91rVvSNVrW-eIv2PEJ8YU3sZGTCGucKmElzv05SIiOoxUcxw8kNWG3w/exec?admin=1';
 
 const heroBg = document.querySelector('[data-parallax]');
 window.addEventListener('scroll', () => {
