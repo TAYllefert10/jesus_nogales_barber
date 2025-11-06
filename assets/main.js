@@ -1,7 +1,7 @@
 /***** jesus_nogales_barber / assets/main.js – FIX JSONP + render *****/
 
 // 1) PON AQUÍ tu URL /exec (sin parámetros ?action=...):
-const GAS_BASE = 'https://script.google.com/macros/s/AKfycbwT6M8ZRGxy2leCUreUR04ruAClOPJfoRYKLf5RoHmyA8aPeVDKCADPYw8W826VkbZhJA/exec';
+const GAS_BASE = 'https://script.google.com/macros/s/AKfycbzFI9ecznj5tHZI0zwrqo3vPd_duIMbgu9KlCQfQK_qBDHPvYIR9ITcMCGBESyqMGwqBQ/exec?';
 
 // ---------- Animaciones y utilidades visuales ----------
 const heroBg = document.querySelector('[data-parallax]');
